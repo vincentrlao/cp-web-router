@@ -1,0 +1,69 @@
+cp-web-router
+
+2016 by Vincent Lao
+================================================================
+
+
+It needs node.js installed on your machine and some node libraries needs to be downloaded.
+Some of these are:
+- express
+- body-parser
+- http
+- node-libcurl
+- request
+
+To install the required libraries, execute ‘npm install <library name>’. In this case,
+npm install express
+npm install body-parser
+
+There might be a few more libraries that I *might* miss, just use the same command to install them. 
+Once all libraries are installed, you can start the app.
+
+To run it, go to the main folder and execute ‘node app.js’.
+
+The config.js file needs to be changed for the app settings. 
+	DEFAULT_URL – This is the default peer URL
+		eg. "http://10.160.1.137:5000"
+	NUM_PEERS – The number of peers defined
+		eg. NUM_PEERS: 2,
+	PEER_LIST – The list of peer URLs, specify the complete URL, 
+		eg. PEER_LIST: [ 'http://10.160.1.137:5000', 'http://10.160.1.137:5001' ],
+	STORAGE_FILE - Map data file
+		eg. "user_map.lst",
+
+The default access port is defined as 4433. To access this app, point to http://<your IP>:4433/<API>
+
+
+The default access port is defined as 4433. To access this app, point to http://<your IP>:4433/<API>
+
+=====================================================
+Supported APIs:
+
+GET method
+/chain
+/chain/blocks/<block ID>
+/transactions/<UUID>
+/registrar/<enrollment ID>
+/registrar/<enrollment ID>/ecert
+/registrar/<enrollment ID>/tcert
+/network/peers
+
+POST method
+/devops/deploy
+/devops/invoke
+/devops/query
+/chaincode
+/registrar
+
+/createwallet
+
+Additional helper APIs supported:
+/
+ - test message displayed
+
+/addUser/<enroll ID>
+ - creates an enrollID with IP assigned to the one in PEER_LIST (defined above)
+
+/addUser/<enroll ID>/<IP>
+ - creates an enrollID with a specified IP eg. 10.160.1.121:5000 (without quotes). This will create an entry http://10.160.1.121:5000.
+
