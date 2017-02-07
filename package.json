@@ -1,0 +1,10 @@
+{
+	"name": "cp-web-router",
+	"description": "Simple utility for routing calls to and from cp-web.",
+	"author": "Vincent Lao",
+	"main": "app.js",
+	"dependencies": {
+		"express": "*",
+		"body-parser": "*"
+	}
+}
