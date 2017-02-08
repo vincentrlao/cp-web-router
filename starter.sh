@@ -1,6 +1,6 @@
 #!/bin/bash
 
-node app.js &
+nohup node app.js & 
 
 echo "App started."
 
